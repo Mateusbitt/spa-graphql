@@ -3,7 +3,8 @@
 const fs = require('fs')
 
 const projectVars = [
-  'API_URL',
+  'HTTP_API_URL',
+  'WS_API_URL',
   'CLIENT',
   'DEBUG',
 ]
