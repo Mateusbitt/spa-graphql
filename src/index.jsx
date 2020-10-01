@@ -1,5 +1,13 @@
 import React from 'react'
 import { render } from 'react-dom'
+import { ApolloProvider } from 'react-apollo'
+import { client } from './apolloConfig'
 import App from './components/App'
 
-render(<App color="black" />, document.getElementById('app'))
+const renderApp = () => (
+  <ApolloProvider client={client}>
+    <App color="black" />
+  </ApolloProvider>
+)
+
+render(renderApp(), document.getElementById('app'))
