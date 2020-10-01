@@ -1,9 +1,14 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-const Block = ({ color, children }) => {
+const Block = ({ children }) => {
   return (
     <div>{children}</div>
   )
+}
+
+Block.propTypes = {
+  children: PropTypes.string.isRequired,
 }
 
 export { Block }
