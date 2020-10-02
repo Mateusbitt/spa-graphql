@@ -1,11 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { Block } from '../../Block/index'
+
+import { Block } from 'components'
 
 const Wrapper = styled(Block)``
 
-const Row = ({ children }) => {
+const GenericTemplate = ({ children }) => {
   return (
     <Wrapper>
       {children}
@@ -13,8 +14,8 @@ const Row = ({ children }) => {
   )
 }
 
-Row.propTypes = {
-  children: PropTypes.string.isRequired,
+GenericTemplate.propTypes = {
+  children: PropTypes.any,
 }
 
-export { Row }
+export { GenericTemplate }
