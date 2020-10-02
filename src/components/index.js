@@ -1,5 +1,6 @@
 /** atoms */
 export { Block } from './atoms/Block'
+export { Button } from './atoms/Button'
 
 /** molecules */
 export { Content } from './molecules/Content'
