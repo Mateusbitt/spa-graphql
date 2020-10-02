@@ -4,9 +4,9 @@ import styled from 'styled-components'
 
 const StyledButton = styled.button``
 
-const Button = ({ text, ...props }) => {
+const Button = ({ text, onClick }) => {
   return (
-    <StyledButton {...props}>
+    <StyledButton onClick={onClick}>
       {text}
     </StyledButton>
   )
@@ -14,6 +14,7 @@ const Button = ({ text, ...props }) => {
 
 Button.propTypes = {
   text: PropTypes.string,
+  onClick: PropTypes.func,
 }
 
 export { Button }

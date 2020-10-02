@@ -48,6 +48,5 @@ module.exports = {
       specialLink: ['hrefLeft', 'hrefRight', 'to'],
       aspects: ['noHref', 'invalidHref', 'preferButton'],
     }],
-    'react/jsx-props-no-spreading': 0,
   },
 }
