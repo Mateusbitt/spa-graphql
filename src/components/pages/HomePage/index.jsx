@@ -1,21 +1,21 @@
 import React from 'react'
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 // import styled from 'styled-components'
 
 import { PageTemplate, Content, Block } from 'components'
 
-const HomePage = () => {
+const HomePage = ({ t }) => {
   return (
     <PageTemplate
-      header={<Block>header</Block>}
+      header={<Block>{t('pages.HomePage.Header')}</Block>}
       content={<Content />}
-      footer={<Block>footer</Block>}
+      footer={<Block>Footer</Block>}
     />
   )
 }
 
-// HomePage.propTypes = {
-//   children: PropTypes.any,
-// }
+HomePage.propTypes = {
+  t: PropTypes.func,
+}
 
 export { HomePage }

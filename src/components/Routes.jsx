@@ -2,14 +2,14 @@ import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 import { HomePage, LoginPage } from 'components'
 
-const Routes = () => {
+const Routes = ({ ...props }) => {
   return (
     <Switch>
       <Route exact path="/">
-        <HomePage />
+        <HomePage {...props} />
       </Route>
       <Route path="/login">
-        <LoginPage />
+        <LoginPage {...props} />
       </Route>
     </Switch>
   )
