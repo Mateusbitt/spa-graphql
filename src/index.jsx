@@ -5,6 +5,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { GlobalStyles, ThemeProvider } from 'themes'
 import { client } from './apolloConfig'
 import './i18n'
+import 'antd/dist/antd.css'
 import App from './components/App'
 
 const renderApp = () => {
