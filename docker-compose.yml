@@ -32,12 +32,15 @@ services:
       - 80
     environment:
       VIRTUAL_HOST: "${SPA_URL}"
-      VIRTUAL_PORT: 80
-      PORT: 80
+      VIRTUAL_PORT: ${HTTP_PORT}
+      PORT: ${HTTP_PORT}
       APP_ENV: "${ENVIRONMENT}"
       NODE_ENV: "${ENVIRONMENT}"
-      API_URL: "${API_URL}"
+      HTTP_API_URL: "${HTTP_API_URL}"
+      WS_API_URL: "${WS_API_URL}"
       CLIENT: "${CLIENT}"
+
+      DEBUG: "true"
 
       DEBUG: "true"
     command: ['.s2i/bin/assemble']
