@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
-import { Block, Button } from 'components'
+import { Block, ADButton } from 'components'
 import { usePersistedState } from 'hooks'
 
 const Wrapper = styled(Block)`
@@ -28,8 +28,8 @@ const Content = ({ t, i18n, toggleTheme }) => {
   return (
     <Wrapper id="Content">
       <Block id="home">{t('molecules.Content.Home')}</Block>
-      <Button text="Trocar Lingua" onClick={() => changeSelect()} />
-      <Button text="Trocar Tema" onClick={() => changeTheme()} />
+      <ADButton onClick={() => changeSelect()}>Trocar Lingua</ADButton>
+      <ADButton onClick={() => changeTheme()}>Trocar Tema</ADButton>
       <Link to="/login">Login</Link>
     </Wrapper>
   )
