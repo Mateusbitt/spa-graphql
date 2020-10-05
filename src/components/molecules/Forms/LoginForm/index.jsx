@@ -31,7 +31,7 @@ const LoginForm = ({ onFinish, onFinishFailed }) => {
       </ADFormItem>
 
       <ADFormItem>
-        <ADButton type="primary" danger htmlType="submit">
+        <ADButton type="primary" htmlType="submit">
           Submit
         </ADButton>
       </ADFormItem>

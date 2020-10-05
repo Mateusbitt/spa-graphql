@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import { CheckLoggedInn } from 'utils'
 
 import { PageTemplate, Content, Block } from 'components'
 
@@ -11,14 +12,18 @@ const StyledBlock = styled(Block)`
 
 const HomePage = ({
   t, theme, toggleTheme, i18n, idPage,
-}) => (
-  <PageTemplate
-    idPage={idPage}
-    header={<StyledBlock theme={theme}>{t('pages.HomePage.Header')}</StyledBlock>}
-    content={<Content t={t} toggleTheme={toggleTheme} i18n={i18n} />}
-    footer={<Block>Footer</Block>}
-  />
-)
+}) => {
+  CheckLoggedInn()
+  return (
+    <PageTemplate
+      idPage={idPage}
+      sider={<Block>Sider</Block>}
+      header={<StyledBlock theme={theme}>{t('pages.HomePage.Header')}</StyledBlock>}
+      content={<Content t={t} toggleTheme={toggleTheme} i18n={i18n} />}
+      footer={<Block>Footer</Block>}
+    />
+  )
+}
 
 HomePage.propTypes = {
   idPage: PropTypes.string.isRequired,
