@@ -4,11 +4,13 @@ import styled from 'styled-components'
 
 import { Block } from 'components'
 
-const Wrapper = styled(Block)``
+const Wrapper = styled(Block)`
+  margin: 10px;
+`
 
 const GenericTemplate = ({ children }) => {
   return (
-    <Wrapper>
+    <Wrapper id="GenericTemplate">
       {children}
     </Wrapper>
   )
