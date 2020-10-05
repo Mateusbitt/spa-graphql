@@ -10,9 +10,10 @@ const StyledBlock = styled(Block)`
 `
 
 const HomePage = ({
-  t, theme, toggleTheme, i18n,
+  t, theme, toggleTheme, i18n, idPage,
 }) => (
   <PageTemplate
+    idPage={idPage}
     header={<StyledBlock theme={theme}>{t('pages.HomePage.Header')}</StyledBlock>}
     content={<Content t={t} toggleTheme={toggleTheme} i18n={i18n} />}
     footer={<Block>Footer</Block>}
@@ -20,6 +21,7 @@ const HomePage = ({
 )
 
 HomePage.propTypes = {
+  idPage: PropTypes.string.isRequired,
   t: PropTypes.func.isRequired,
   theme: PropTypes.object.isRequired,
   toggleTheme: PropTypes.func.isRequired,

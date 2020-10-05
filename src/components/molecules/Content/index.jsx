@@ -26,8 +26,8 @@ const Content = ({ t, i18n, toggleTheme }) => {
   }
 
   return (
-    <Wrapper>
-      <Block>{t('molecules.Content.Home')}</Block>
+    <Wrapper id="Content">
+      <Block id="home">{t('molecules.Content.Home')}</Block>
       <Button text="Trocar Lingua" onClick={() => changeSelect()} />
       <Button text="Trocar Tema" onClick={() => changeTheme()} />
       <Link to="/login">Login</Link>

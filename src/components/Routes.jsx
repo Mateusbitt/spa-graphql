@@ -9,10 +9,10 @@ const Routes = ({
   return (
     <Switch>
       <Route exact path="/">
-        <HomePage t={t} toggleTheme={toggleTheme} i18n={i18n} theme={theme} />
+        <HomePage idPage="homePage" t={t} toggleTheme={toggleTheme} i18n={i18n} theme={theme} />
       </Route>
       <Route path="/login">
-        <LoginPage t={t} toggleTheme={toggleTheme} i18n={i18n} theme={theme} />
+        <LoginPage idPage="loginPage" t={t} toggleTheme={toggleTheme} i18n={i18n} theme={theme} />
       </Route>
     </Switch>
   )
