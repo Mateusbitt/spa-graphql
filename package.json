@@ -3,8 +3,21 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "jest": {
+    "moduleDirectories": [
+      "src",
+      "node_modules"
+    ],
+    "moduleNameMapper": {
+      "^(components)$": "<rootDir>/scripts/jest/componentsMock.js"
+    },
+    "setupFiles": [
+      "<rootDir>/scripts/jest/setupTests.js"
+    ]
+  },
   "scripts": {
-    "dev": "webpack-dev-server --mode development --host 0.0.0.0 --port 80"
+    "dev": "webpack-dev-server --mode development --host 0.0.0.0 --port 80",
+    "test": "jest"
   },
   "dependencies": {
     "apollo-cache-inmemory": "^1.6.6",
@@ -19,6 +32,7 @@
     "file-loader": "6.1.0",
     "graphql": "^15.3.0",
     "i18next": "^19.8.0",
+    "jest": "^26.5.0",
     "prop-types": "^15.7.2",
     "react": "16.13.1",
     "react-apollo": "^3.1.5",
@@ -37,6 +51,9 @@
     "@babel/plugin-transform-runtime": "7.11.5",
     "@babel/preset-env": "7.11.5",
     "@babel/preset-react": "7.10.4",
+    "babel-jest": "^26.5.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.5",
     "eslint": "^7.10.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-import-resolver-webpack": "^0.13.0",
