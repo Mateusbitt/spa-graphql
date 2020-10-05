@@ -6,6 +6,7 @@ export { ADFormItem } from './atoms/antd/FormItem'
 export { ADInput } from './atoms/antd/Input'
 export { ADInputPassword } from './atoms/antd/InputPassword'
 export { ADCheckbox } from './atoms/antd/Checkbox'
+export { adMessage } from './atoms/antd/Message'
 
 /** molecules */
 export { Content } from './molecules/Content'
