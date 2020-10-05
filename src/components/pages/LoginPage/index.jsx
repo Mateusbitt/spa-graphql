@@ -1,21 +1,20 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-// import PropTypes from 'prop-types'
-// import styled from 'styled-components'
-
-import { GenericTemplate, Block } from 'components'
+import { LoginForm, GenericTemplate } from 'components'
 
 const LoginPage = () => {
+  const onFinish = (values) => {
+    console.log('Success:', values)
+  }
+
+  const onFinishFailed = (errorInfo) => {
+    console.log('Failed:', errorInfo)
+  }
+
   return (
     <GenericTemplate>
-      <Block>Login</Block>
-      <Link to="/">Home</Link>
+      <LoginForm onFinish={onFinish} onFinishFailed={onFinishFailed} />
     </GenericTemplate>
   )
 }
-
-// LoginPage.propTypes = {
-//   children: PropTypes.any,
-// }
 
 export { LoginPage }
