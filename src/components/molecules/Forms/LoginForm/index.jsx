@@ -1,6 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { ADForm, ADFormItem, ADButton, ADInput, ADInputPassword, ADCheckbox } from 'components'
+import {
+  ADForm,
+  ADFormItem,
+  ADButton,
+  ADInput,
+  ADInputPassword,
+  ADCheckbox,
+} from 'components'
 
 const LoginForm = ({ onFinish, onFinishFailed }) => {
   return (

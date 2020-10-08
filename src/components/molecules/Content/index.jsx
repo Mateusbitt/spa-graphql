@@ -1,8 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
-import { useHistory } from 'react-router-dom'
+import { useHistory, Link } from 'react-router-dom'
 import { Block, ADButton } from 'components'
 import { usePersistedState } from 'hooks'
 

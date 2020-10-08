@@ -38,6 +38,7 @@ const LoginPage = () => {
   }
 
   const onFinishFailed = (errorInfo) => {
+    // eslint-disable-next-line no-console
     console.log('Failed:', errorInfo)
   }
 

@@ -31,6 +31,7 @@ it('should render homePage', () => {
   const wrapper = wrap({
     t, i18n, toggleTheme, theme, idPage: 'homePage',
   })
+  const spy = jest.spyOn(HomePage, 'CheckLoggedInn')
   expect(wrapper.find({
     idPage: 'homePage',
   })).toHaveLength(1)
