@@ -19,8 +19,8 @@ const LoginPage = () => {
   const onFinish = async (values, client) => {
     try {
       const data = (
-        await client.query({
-          query: UserLogin,
+        await client.mutate({
+          mutation: UserLogin,
           variables: {
             username: values.username,
             password: values.password,

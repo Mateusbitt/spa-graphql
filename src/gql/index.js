@@ -1,5 +1,5 @@
 /** Queries */
-export { UserLogin } from './Queries/UserLogin'
+export { UserLogin } from './Mutations/UserLogin'
 
 /** Mutations */
 
