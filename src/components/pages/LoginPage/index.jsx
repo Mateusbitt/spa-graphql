@@ -35,6 +35,7 @@ const LoginPage = ({
       )
       adMessage.success('Welcome!')
       localStorage.setItem('token', data.data.UserLogin.token)
+      localStorage.setItem('refreshToken', data.data.UserLogin.refreshToken)
       history.push('/')
     } catch (error) {
       if (error.message === 'GraphQL error: Invalid username or password!') {

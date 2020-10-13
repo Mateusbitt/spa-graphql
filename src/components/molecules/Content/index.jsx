@@ -7,10 +7,13 @@ import { usePersistedState } from 'hooks'
 
 const Wrapper = styled(Block)`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  margin: 10px;
 `
 
-const Content = ({ t, i18n, toggleTheme }) => {
+const Content = ({
+  t, i18n, toggleTheme,
+}) => {
   const [lang, setLang] = usePersistedState('language', JSON.parse(localStorage.getItem('language')) || 'enUS')
   const [theme, setTheme] = usePersistedState('theme', JSON.parse(localStorage.getItem('theme')) || 'light')
   const history = useHistory()
@@ -46,7 +49,6 @@ Content.propTypes = {
   toggleTheme: PropTypes.func,
   t: PropTypes.func,
   i18n: PropTypes.object,
-
 }
 
 export { Content }
