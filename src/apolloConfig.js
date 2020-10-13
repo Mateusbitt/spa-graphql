@@ -8,7 +8,6 @@ import { InMemoryCache } from 'apollo-cache-inmemory'
 import {
   HTTP_API_URL,
   // WS_API_URL,
-// eslint-disable-next-line import/no-unresolved
 } from 'environment'
 
 const uri = HTTP_API_URL

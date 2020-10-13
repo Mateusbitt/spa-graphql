@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { Themes, ThemeContext } from 'themes'
-// eslint-disable-next-line import/no-unresolved
 import { CLIENT } from 'environment'
 
 const ThemeProvider = ({ children }) => {
