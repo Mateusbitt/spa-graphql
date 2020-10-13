@@ -8,6 +8,7 @@ mutation UserLogin($username: String!, $password: String!) {
   )
    {
     token
+    refreshToken
   }
 }
 `
