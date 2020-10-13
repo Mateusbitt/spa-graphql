@@ -5,12 +5,13 @@ import styled from 'styled-components'
 import { Block } from 'components'
 
 const Wrapper = styled(Block)`
-  margin: 10px;
+  background-color: ${({ theme }) => theme.colors.background[0]};
+  height: 100vh;
 `
 
-const GenericTemplate = ({ children }) => {
+const GenericTemplate = ({ children, theme }) => {
   return (
-    <Wrapper id="GenericTemplate">
+    <Wrapper id="GenericTemplate" theme={theme}>
       {children}
     </Wrapper>
   )
@@ -18,6 +19,7 @@ const GenericTemplate = ({ children }) => {
 
 GenericTemplate.propTypes = {
   children: PropTypes.any,
+  theme: PropTypes.object.isRequired,
 }
 
 export { GenericTemplate }

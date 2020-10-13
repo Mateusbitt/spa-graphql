@@ -37,5 +37,6 @@ jobs:
           ${{ runner.os }}-build-
           ${{ runner.os }}-
     - run: npm install
+    - run: cp src/environment/index_example.js src/environment/index.js
     - run: npm run lint
     - run: npm run test

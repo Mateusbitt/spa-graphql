@@ -6,6 +6,8 @@ import { HomePage } from '.'
 // eslint-disable-next-line react/jsx-props-no-spreading
 const wrap = ({ ...props }) => shallow(<HomePage {...props} />)
 
+jest.mock('utils', () => ({ CheckLoggedInn: () => true }))
+
 it('should not render childrens', () => {
   const t = (text) => text
   const i18n = {
