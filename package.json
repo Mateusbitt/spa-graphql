@@ -18,7 +18,7 @@
   "scripts": {
     "dev": "webpack-dev-server --mode development --host 0.0.0.0 --port 80",
     "test": "jest --verbose",
-    "lint": "eslint src/**"
+    "lint": "eslint src/** --no-error-on-unmatched-pattern"
   },
   "dependencies": {
     "antd": "^4.6.6",
