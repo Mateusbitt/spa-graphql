@@ -6,6 +6,8 @@ import { HomePage } from '.'
 // eslint-disable-next-line react/jsx-props-no-spreading
 const wrap = ({ ...props }) => shallow(<HomePage {...props} />)
 
+jest.mock('utils', () => ({ CheckLoggedInn: () => true }))
+
 it('should not render childrens', () => {
   const t = (text) => text
   const i18n = {
@@ -31,7 +33,6 @@ it('should render homePage', () => {
   const wrapper = wrap({
     t, i18n, toggleTheme, theme, idPage: 'homePage',
   })
-  const spy = jest.spyOn(HomePage, 'CheckLoggedInn')
   expect(wrapper.find({
     idPage: 'homePage',
   })).toHaveLength(1)

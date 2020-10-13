@@ -4,17 +4,20 @@ import styled from 'styled-components'
 
 import { Block } from 'components'
 
-const Wrapper = styled(Block)``
+const Wrapper = styled(Block)`
+  background-color: ${({ theme }) => theme.colors.background[0]};
+  height: 100vh;
+`
 const Sider = styled(Block)``
 const Header = styled(Block)``
 const Content = styled(Block)``
 const Footer = styled(Block)``
 
 const PageTemplate = ({
-  idPage, sider, header, content, footer,
+  idPage, sider, header, content, footer, theme,
 }) => {
   return (
-    <Wrapper idPage={idPage}>
+    <Wrapper idPage={idPage} theme={theme}>
       <Sider>{sider}</Sider>
       <Header>{header}</Header>
       <Content>{content}</Content>
@@ -29,6 +32,7 @@ PageTemplate.propTypes = {
   header: PropTypes.node.isRequired,
   content: PropTypes.any.isRequired,
   footer: PropTypes.node.isRequired,
+  theme: PropTypes.object.isRequired,
 }
 
 export { PageTemplate }

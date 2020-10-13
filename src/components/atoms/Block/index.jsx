@@ -1,19 +1,18 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
+import { ThemeContext } from 'themes'
 
-const Wrapper = styled.div``
+const StyledBlock = styled.div`
+  font-family: ${({ theme }) => theme.fonts.primary};
+  color: ${({ theme }) => theme.colors.text[0]};
+  background-color: ${({ theme }) => theme.colors.background[1]};
+  font-weight: bold;
+`
 
-const Block = ({ children, ...props }) => {
-  return (
-    // eslint-disable-next-line react/jsx-props-no-spreading
-    <Wrapper {...props}>{children}</Wrapper>
-  )
-}
-
-Block.propTypes = {
-  children: PropTypes.any.isRequired,
-  onClick: PropTypes.func,
+const Block = ({ ...props }) => {
+  const { theme } = useContext(ThemeContext)
+  // eslint-disable-next-line react/jsx-props-no-spreading
+  return (<StyledBlock theme={theme} {...props} />)
 }
 
 export { Block }

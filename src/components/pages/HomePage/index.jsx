@@ -21,6 +21,7 @@ const HomePage = ({
       header={<StyledBlock theme={theme}>{t('pages.HomePage.Header')}</StyledBlock>}
       content={<Content t={t} toggleTheme={toggleTheme} i18n={i18n} />}
       footer={<Block>Footer</Block>}
+      theme={theme}
     />
   )
 }
