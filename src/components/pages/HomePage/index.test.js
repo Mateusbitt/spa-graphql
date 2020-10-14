@@ -22,18 +22,3 @@ it('should not render childrens', () => {
     children: 'test',
   })).toHaveLength(0)
 })
-
-it('should render homePage', () => {
-  const t = (text) => text
-  const i18n = {
-    changeLanguage: () => {},
-  }
-  const toggleTheme = () => {}
-  const theme = Themes.default.dark
-  const wrapper = wrap({
-    t, i18n, toggleTheme, theme, idPage: 'homePage',
-  })
-  expect(wrapper.find({
-    idPage: 'homePage',
-  })).toHaveLength(1)
-})
