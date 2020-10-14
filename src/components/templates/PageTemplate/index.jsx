@@ -1,38 +1,39 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import { Layout, Content } from 'components'
 
-import { Block } from 'components'
-
-const Wrapper = styled(Block)`
-  background-color: ${({ theme }) => theme.colors.background[0]};
-  height: 100vh;
+const StyledLayout = styled(Layout)`
+height: 100vh;
+.site-layout .site-layout-background {
+  background: #fff;
+}
 `
-const Sider = styled(Block)``
-const Header = styled(Block)``
-const Content = styled(Block)``
-const Footer = styled(Block)``
 
-const PageTemplate = ({
-  idPage, sider, header, content, footer, theme,
-}) => {
+const PageTemplate = (
+  {
+    siderbar, pageheader, breadcrumb, children,
+  },
+) => {
   return (
-    <Wrapper idPage={idPage} theme={theme}>
-      <Sider>{sider}</Sider>
-      <Header>{header}</Header>
-      <Content>{content}</Content>
-      <Footer>{footer}</Footer>
-    </Wrapper>
+    <StyledLayout>
+      {siderbar}
+      <Layout className="site-layout">
+        {pageheader}
+        {breadcrumb || null}
+        <Content>
+          {children}
+        </Content>
+      </Layout>
+    </StyledLayout>
   )
 }
 
 PageTemplate.propTypes = {
-  idPage: PropTypes.string.isRequired,
-  sider: PropTypes.node.isRequired,
-  header: PropTypes.node.isRequired,
-  content: PropTypes.any.isRequired,
-  footer: PropTypes.node.isRequired,
-  theme: PropTypes.object.isRequired,
+  siderbar: PropTypes.node.isRequired,
+  pageheader: PropTypes.node.isRequired,
+  breadcrumb: PropTypes.node,
+  children: PropTypes.any.isRequired,
 }
 
 export { PageTemplate }

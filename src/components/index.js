@@ -1,15 +1,22 @@
 /** atoms */
-export { Block } from './atoms/Block'
 export { ADButton } from './atoms/antd/Button'
+export { ADCheckbox } from './atoms/antd/Checkbox'
 export { ADForm } from './atoms/antd/Form'
 export { ADFormItem } from './atoms/antd/FormItem'
 export { ADInput } from './atoms/antd/Input'
 export { ADInputPassword } from './atoms/antd/InputPassword'
-export { ADCheckbox } from './atoms/antd/Checkbox'
 export { adMessage } from './atoms/antd/Message'
+export { Block } from './atoms/Block'
+export { Content } from './atoms/antd/Content'
+export { Header } from './atoms/antd/Header'
+export { Layout } from './atoms/antd/Layout'
+export { Menu } from './atoms/antd/Menu'
+export { MenuItem } from './atoms/antd/MenuItem'
+export { Sider } from './atoms/antd/Sider'
 
 /** molecules */
-export { Content } from './molecules/Content'
+export { PageHeader } from './molecules/PageHeader'
+export { Siderbar } from './molecules/Siderbar'
 
 /** molecules Forms */
 export { LoginForm } from './molecules/Forms/LoginForm'
@@ -17,6 +24,7 @@ export { LoginForm } from './molecules/Forms/LoginForm'
 /** organisms */
 
 /** pages */
+export { GenericLoggedPage } from './pages/GenericLoggedPage'
 export { HomePage } from './pages/HomePage'
 export { LoginPage } from './pages/LoginPage'
 
