@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { Layout, Content } from 'components'
+import { Block, Layout, Content } from 'components'
 
 const StyledLayout = styled(Layout)`
 height: 100vh;
@@ -16,16 +16,18 @@ const PageTemplate = (
   },
 ) => {
   return (
-    <StyledLayout idPage={idPage}>
-      {siderbar}
-      <Layout className="site-layout">
-        {pageheader}
-        {breadcrumb || null}
-        <Content>
-          {children}
-        </Content>
-      </Layout>
-    </StyledLayout>
+    <Block idPage={idPage}>
+      <StyledLayout>
+        {siderbar}
+        <Layout className="site-layout">
+          {pageheader}
+          {breadcrumb || null}
+          <Content>
+            {children}
+          </Content>
+        </Layout>
+      </StyledLayout>
+    </Block>
   )
 }
 

@@ -4,7 +4,7 @@ import { GenericLoggedPage } from 'components'
 
 const HomePage = () => {
   return (
-    <GenericLoggedPage>
+    <GenericLoggedPage idPage="HomePage">
       HomePage
     </GenericLoggedPage>
   )

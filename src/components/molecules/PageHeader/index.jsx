@@ -14,9 +14,9 @@ const StyledADHeader = styled(Header)`
   }
 `
 
-const PageHeader = ({ idPage, toggle, collapsed }) => {
+const PageHeader = ({ toggle, collapsed }) => {
   return (
-    <StyledADHeader idPage={idPage} className="site-layout-background" style={{ padding: 0 }}>
+    <StyledADHeader className="site-layout-background" style={{ padding: 0 }}>
       {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
         className: 'trigger',
         onClick: toggle,
@@ -26,7 +26,6 @@ const PageHeader = ({ idPage, toggle, collapsed }) => {
 }
 
 PageHeader.propTypes = {
-  idPage: PropTypes.string.isRequired,
   toggle: PropTypes.func.isRequired,
   collapsed: PropTypes.bool.isRequired,
 }
