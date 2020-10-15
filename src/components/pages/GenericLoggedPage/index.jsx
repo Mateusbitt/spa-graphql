@@ -4,7 +4,7 @@ import { CheckLoggedInn } from 'utils'
 
 import { Siderbar, PageHeader, PageTemplate } from 'components'
 
-const GenericLoggedPage = ({ children }) => {
+const GenericLoggedPage = ({ idPage, children }) => {
   CheckLoggedInn()
   const [collapsed, setCollapsed] = useState(false)
   const toggle = () => {
@@ -13,6 +13,7 @@ const GenericLoggedPage = ({ children }) => {
 
   return (
     <PageTemplate
+      idPage={idPage}
       siderbar={<Siderbar collapsed={collapsed} />}
       pageheader={<PageHeader toggle={toggle} collapsed={collapsed} />}
       breadcrumb={null}
@@ -23,6 +24,7 @@ const GenericLoggedPage = ({ children }) => {
 }
 
 GenericLoggedPage.propTypes = {
+  idPage: PropTypes.string.isRequired,
   children: PropTypes.any.isRequired,
 }
 

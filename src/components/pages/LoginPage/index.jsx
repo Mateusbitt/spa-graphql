@@ -19,7 +19,7 @@ const StyledBlock = styled(Block)`
 `
 
 const LoginPage = ({
-  theme,
+  theme, idPage,
 }) => {
   const history = useHistory()
   const onFinish = async (values, client) => {
@@ -50,7 +50,7 @@ const LoginPage = ({
   }
 
   return (
-    <GenericTemplate theme={theme}>
+    <GenericTemplate theme={theme} idPage={idPage}>
       <ApolloConsumer>
         {
           (client) => {
@@ -70,7 +70,7 @@ const LoginPage = ({
 }
 
 LoginPage.propTypes = {
-  // idPage: PropTypes.string.isRequired,
+  idPage: PropTypes.string.isRequired,
   // t: PropTypes.func.isRequired,
   theme: PropTypes.object.isRequired,
   // toggleTheme: PropTypes.func.isRequired,

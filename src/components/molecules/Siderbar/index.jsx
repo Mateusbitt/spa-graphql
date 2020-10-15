@@ -11,9 +11,9 @@ import {
   Block, Sider, Menu, MenuItem,
 } from 'components'
 
-const Siderbar = ({ collapsed }) => {
+const Siderbar = ({ idPage, collapsed }) => {
   return (
-    <Sider trigger={null} collapsible collapsed={collapsed}>
+    <Sider idPage={idPage} trigger={null} collapsible collapsed={collapsed}>
       <Block className="logo">breno</Block>
       <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
         <MenuItem key="1" icon={<UserOutlined />}>
@@ -31,6 +31,7 @@ const Siderbar = ({ collapsed }) => {
 }
 
 Siderbar.propTypes = {
+  idPage: PropTypes.string.isRequired,
   collapsed: PropTypes.bool.isRequired,
 }
 

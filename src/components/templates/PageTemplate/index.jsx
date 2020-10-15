@@ -12,11 +12,11 @@ height: 100vh;
 
 const PageTemplate = (
   {
-    siderbar, pageheader, breadcrumb, children,
+    idPage, siderbar, pageheader, breadcrumb, children,
   },
 ) => {
   return (
-    <StyledLayout>
+    <StyledLayout idPage={idPage}>
       {siderbar}
       <Layout className="site-layout">
         {pageheader}
@@ -30,6 +30,7 @@ const PageTemplate = (
 }
 
 PageTemplate.propTypes = {
+  idPage: PropTypes.string.isRequired,
   siderbar: PropTypes.node.isRequired,
   pageheader: PropTypes.node.isRequired,
   breadcrumb: PropTypes.node,
