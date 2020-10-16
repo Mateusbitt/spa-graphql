@@ -38,8 +38,8 @@ const LoginForm = ({ onFinish, onFinishFailed }) => {
       </ADFormItem>
 
       <ADFormItem>
-        <ADButton type="primary" htmlType="submit">
-          Submit
+        <ADButton palette="primary" htmlType="submit">
+          Sign-In
         </ADButton>
       </ADFormItem>
     </ADForm>
