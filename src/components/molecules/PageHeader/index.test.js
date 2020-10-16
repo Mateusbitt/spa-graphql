@@ -11,7 +11,7 @@ describe('PageHeader', () => {
       collapsed: true,
     })
     expect(wrapper.find({
-      collapsed: true,
+      id: 'PageHeader',
     })).toHaveLength(1)
   })
 })

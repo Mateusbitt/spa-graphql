@@ -7,11 +7,10 @@ describe('Siderbar', () => {
   const wrap = ({ ...props }) => shallow(<Siderbar {...props}>Teste</Siderbar>)
   it('should render Siderbar', () => {
     const wrapper = wrap({
-      idPage: 'Siderbar',
       collapsed: true,
     })
     expect(wrapper.find({
-      idPage: 'Siderbar',
+      id: 'Sidebar',
     })).toHaveLength(1)
   })
 })

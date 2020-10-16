@@ -13,7 +13,7 @@ import {
 
 const Siderbar = ({ collapsed }) => {
   return (
-    <Sider trigger={null} collapsible collapsed={collapsed}>
+    <Sider id="Sidebar" trigger={null} collapsible collapsed={collapsed}>
       <Block className="logo">breno</Block>
       <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
         <MenuItem key="1" icon={<UserOutlined />}>
