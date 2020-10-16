@@ -1,7 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Switch, Route } from 'react-router-dom'
-import { HomePage, LoginPage } from 'components'
+import {
+  HomePage, LoginPage, UsersPage, ChatsPage,
+} from 'components'
 
 const Routes = ({
   t, theme, toggleTheme, i18n,
@@ -13,6 +15,15 @@ const Routes = ({
       </Route>
       <Route path="/login">
         <LoginPage idPage="loginPage" t={t} toggleTheme={toggleTheme} i18n={i18n} theme={theme} />
+      </Route>
+      <Route path="/users">
+        <UsersPage idPage="loginPage" t={t} toggleTheme={toggleTheme} i18n={i18n} theme={theme} />
+      </Route>
+      <Route path="/chats">
+        <ChatsPage idPage="loginPage" t={t} toggleTheme={toggleTheme} i18n={i18n} theme={theme} />
+      </Route>
+      <Route path="*">
+        <HomePage idPage="homePage" t={t} toggleTheme={toggleTheme} i18n={i18n} theme={theme} />
       </Route>
     </Switch>
   )
