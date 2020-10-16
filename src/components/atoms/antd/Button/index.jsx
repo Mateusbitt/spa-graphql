@@ -6,8 +6,11 @@ import { ThemeContext } from 'themes'
 import { Button as antdButton } from 'antd'
 
 const StyledAntdButton = styled(antdButton)`
-  background: ${({ danger, theme }) => danger ? theme.colors.actions[3] : theme.colors.actions[0]} !important;
-  color: ${({ danger, theme }) => danger ? theme.colors.text[1] : theme.colors.text[1]} !important;
+  background: ${({ palette, theme }) => theme.colors[palette][1]} !important;
+  color: ${({ theme }) => theme.colors.white[0]} !important;
+  font-weight: bold;
+  border-radius: 5px;
+  border-color: ${({ palette, theme }) => theme.colors[palette][0]} !important;
 `
 
 const ADButton = ({ children, ...props }) => {
@@ -21,7 +24,12 @@ const ADButton = ({ children, ...props }) => {
 }
 
 ADButton.propTypes = {
+  palette: PropTypes.string,
   children: PropTypes.any,
+}
+
+ADButton.defaultProps = {
+  palette: 'primary',
 }
 
 export { ADButton }
