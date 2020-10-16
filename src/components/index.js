@@ -13,6 +13,7 @@ export { Layout } from './atoms/antd/Layout'
 export { Menu } from './atoms/antd/Menu'
 export { MenuItem } from './atoms/antd/MenuItem'
 export { Sider } from './atoms/antd/Sider'
+export { ADSwitch } from './atoms/antd/Switch'
 
 /** molecules */
 export { PageHeader } from './molecules/PageHeader'
@@ -24,9 +25,11 @@ export { LoginForm } from './molecules/Forms/LoginForm'
 /** organisms */
 
 /** pages */
+export { ChatsPage } from './pages/ChatsPage'
 export { GenericLoggedPage } from './pages/GenericLoggedPage'
 export { HomePage } from './pages/HomePage'
 export { LoginPage } from './pages/LoginPage'
+export { UsersPage } from './pages/UsersPage'
 
 /** templates */
 export { GenericTemplate } from './templates/GenericTemplate'
