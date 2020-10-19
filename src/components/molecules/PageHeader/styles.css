@@ -1,0 +1,6 @@
+#PageHeader {
+  padding: 0px 15px;
+  display: flex;
+  align-items: center;
+  place-content: space-between;
+}

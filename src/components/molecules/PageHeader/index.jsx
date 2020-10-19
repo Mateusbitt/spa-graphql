@@ -1,27 +1,37 @@
 import React from 'react'
+import jwtDecode from 'jwt-decode'
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
 import {
   MenuUnfoldOutlined,
   MenuFoldOutlined,
 } from '@ant-design/icons'
-
+import './styles.css'
 import { Header } from 'components'
-
-const StyledADHeader = styled(Header)`
-  .trigger {
-    margin-left:10px;
-  }
-`
+import { useQuery } from '@apollo/client'
+import { ADDropdown } from '../../atoms/antd/Dropdown'
+import { Users as UsersQuery } from '../../../gql'
 
 const PageHeader = ({ toggle, collapsed }) => {
+  const localStorageData = jwtDecode(localStorage.getItem('token'))
+  const { id } = localStorageData.userData
+
+  const { data, error, loading } = useQuery(UsersQuery, {
+    variables: {
+      id,
+    },
+  })
+
+  if (error) return null
+  if (loading) return <div>Loading...</div>
+  const [user] = data.Users
+
   return (
-    <StyledADHeader id="PageHeader" className="site-layout-background" style={{ padding: 0 }}>
+    <Header id="PageHeader" className="site-layout-background">
       {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
-        className: 'trigger',
         onClick: toggle,
       })}
-    </StyledADHeader>
+      <ADDropdown loggedUser={user.name} />
+    </Header>
   )
 }
 
