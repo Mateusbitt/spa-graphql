@@ -42,6 +42,8 @@ const PageHeader = ({ toggle, collapsed }) => {
   if (loading) return <div>Loading...</div>
   const [user] = data.Users
 
+  if (!user) return null
+
   const menuItems = (
     <Menu>
       <MenuItem className="ant-dropdown-link">Change theme</MenuItem>
@@ -55,7 +57,7 @@ const PageHeader = ({ toggle, collapsed }) => {
       {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
         onClick: toggle,
       })}
-      <ADDropdown title={user.name} items={menuItems} />
+      {user && <ADDropdown title={user.name} items={menuItems} />}
     </StyledHeader>
   )
 }
