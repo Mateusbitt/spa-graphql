@@ -1,5 +1,4 @@
 import React from 'react'
-import { useHistory } from 'react-router-dom'
 import jwtDecode from 'jwt-decode'
 import PropTypes from 'prop-types'
 import {
@@ -7,7 +6,7 @@ import {
   MenuFoldOutlined,
 } from '@ant-design/icons'
 import {
-  Header, ADDropdown, Menu, MenuItem,
+  Header, ADDropdown, DropdownUser,
 } from 'components'
 import { useQuery } from '@apollo/client'
 import styled from 'styled-components'
@@ -21,14 +20,6 @@ const StyledHeader = styled(Header)`
 `
 
 const PageHeader = ({ toggle, collapsed }) => {
-  const history = useHistory()
-
-  const logout = () => {
-    localStorage.removeItem('token')
-    localStorage.removeItem('refreshToken')
-    history.push('/login')
-  }
-
   const localStorageData = jwtDecode(localStorage.getItem('token'))
   const { id } = localStorageData.userData
 
@@ -44,20 +35,12 @@ const PageHeader = ({ toggle, collapsed }) => {
 
   if (!user) return null
 
-  const menuItems = (
-    <Menu>
-      <MenuItem className="ant-dropdown-link">Change theme</MenuItem>
-      <MenuItem className="ant-dropdown-link">Change language</MenuItem>
-      <MenuItem className="ant-dropdown-link" onClick={() => logout()}>Logout</MenuItem>
-    </Menu>
-  )
-
   return (
     <StyledHeader id="PageHeader" className="site-layout-background">
       {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
         onClick: toggle,
       })}
-      {user && <ADDropdown title={user.name} items={menuItems} />}
+      {user && <ADDropdown title={user.name} items={<DropdownUser />} />}
     </StyledHeader>
   )
 }
