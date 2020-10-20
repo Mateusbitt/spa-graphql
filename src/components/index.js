@@ -18,6 +18,7 @@ export { ADSwitch } from './atoms/antd/Switch'
 /** molecules */
 export { PageHeader } from './molecules/PageHeader'
 export { Siderbar } from './molecules/Siderbar'
+export { ADDropdown } from './molecules/antd/Dropdown'
 
 /** molecules Forms */
 export { LoginForm } from './molecules/Forms/LoginForm'
