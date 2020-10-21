@@ -1,13 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useHistory } from 'react-router-dom'
-// import PropTypes from 'prop-types'
-// import styled from 'styled-components'
+import { ThemeContext } from 'themes'
+import PropTypes from 'prop-types'
+import styled from 'styled-components'
 import {
-  Menu, MenuItem,
+  Menu, MenuItem, ADSwitch,
 } from 'components'
 
-const DropdownUser = () => {
+const StyledSwitch = styled(ADSwitch)`
+  .ant-switch-inner { color: ${({ theme }) => theme.colors.text[0]} !important };
+`
+
+const DropdownUser = ({ toggleTheme }) => {
   const history = useHistory()
+  const { theme } = useContext(ThemeContext)
 
   const logout = () => {
     localStorage.removeItem('token')
@@ -17,15 +23,23 @@ const DropdownUser = () => {
 
   return (
     <Menu>
-      <MenuItem className="ant-dropdown-link">Change theme</MenuItem>
-      <MenuItem className="ant-dropdown-link">Change language</MenuItem>
-      <MenuItem className="ant-dropdown-link" onClick={() => logout()}>Logout</MenuItem>
+      <MenuItem theme={theme} className="ant-dropdown-link">
+        <StyledSwitch
+          theme={theme}
+          defaultChecked={JSON.parse(localStorage.getItem('theme')) === 'dark'}
+          onChange={toggleTheme}
+          checkedChildren="Dark"
+          unCheckedChildren="Light"
+        />
+      </MenuItem>
+      <MenuItem theme={theme} className="ant-dropdown-link">Change language</MenuItem>
+      <MenuItem theme={theme} className="ant-dropdown-link" onClick={() => logout()}>Logout</MenuItem>
     </Menu>
   )
 }
 
-// DropdownUser.propTypes = {
-//   children: PropTypes.any,
-// }
+DropdownUser.propTypes = {
+  toggleTheme: PropTypes.func.isRequired,
+}
 
 export { DropdownUser }

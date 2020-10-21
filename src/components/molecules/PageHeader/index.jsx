@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import jwtDecode from 'jwt-decode'
+import { ThemeContext } from 'themes'
 import PropTypes from 'prop-types'
 import {
   MenuUnfoldOutlined,
@@ -19,7 +20,8 @@ const StyledHeader = styled(Header)`
   place-content: space-between;
 `
 
-const PageHeader = ({ toggle, collapsed }) => {
+const PageHeader = ({ toggle, collapsed, toggleTheme }) => {
+  const { theme } = useContext(ThemeContext)
   const localStorageData = jwtDecode(localStorage.getItem('token'))
   const { id } = localStorageData.userData
 
@@ -36,11 +38,11 @@ const PageHeader = ({ toggle, collapsed }) => {
   if (!user) return null
 
   return (
-    <StyledHeader id="PageHeader" className="site-layout-background">
+    <StyledHeader id="PageHeader" className="site-layout-background" theme={theme}>
       {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
         onClick: toggle,
       })}
-      {user && <ADDropdown title={user.name} items={<DropdownUser />} />}
+      {user && <ADDropdown title={user.name} items={<DropdownUser theme={theme} toggleTheme={toggleTheme} />} />}
     </StyledHeader>
   )
 }
@@ -48,6 +50,7 @@ const PageHeader = ({ toggle, collapsed }) => {
 PageHeader.propTypes = {
   toggle: PropTypes.func.isRequired,
   collapsed: PropTypes.bool.isRequired,
+  toggleTheme: PropTypes.func.isRequired,
 }
 
 export { PageHeader }

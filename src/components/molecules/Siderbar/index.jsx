@@ -11,7 +11,7 @@ import {
 } from '@ant-design/icons'
 
 import {
-  Block, Sider, Menu, MenuItem, ADSwitch,
+  Block, Sider, Menu, MenuItem,
 } from 'components'
 import styled from 'styled-components'
 
@@ -22,7 +22,7 @@ const StyledSider = styled(Sider)`
   }
   .ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal) .ant-menu-item-selected {
     background-color: ${({ theme }) => theme.colors.background[2]};
-}
+  }
   .logo {
     height: 32px;
     background-color: ${({ theme }) => theme.colors.background[0]};
@@ -36,11 +36,8 @@ const StyledSider = styled(Sider)`
 const StyledMenuItem = styled(MenuItem)`
   color: ${({ theme }) => theme.colors.text[0]} !important;
 `
-const StyledSwitch = styled(ADSwitch)`
-  .ant-switch-inner { color: ${({ theme }) => theme.colors.text[0]} !important };
-`
 
-const Siderbar = ({ collapsed, toggleTheme }) => {
+const Siderbar = ({ collapsed }) => {
   const history = useHistory()
   const { theme } = useContext(ThemeContext)
   const logout = () => {
@@ -67,22 +64,12 @@ const Siderbar = ({ collapsed, toggleTheme }) => {
         <StyledMenuItem key="4" theme={theme} icon={<LogoutOutlined />} onClick={logout}>
           Logout
         </StyledMenuItem>
-        <StyledMenuItem theme={theme} disabled>
-          <StyledSwitch
-            theme={theme}
-            defaultChecked={JSON.parse(localStorage.getItem('theme')) === 'dark'}
-            onChange={toggleTheme}
-            checkedChildren="Dark"
-            unCheckedChildren="Light"
-          />
-        </StyledMenuItem>
       </Menu>
     </StyledSider>
   )
 }
 
 Siderbar.propTypes = {
-  toggleTheme: PropTypes.func.isRequired,
   collapsed: PropTypes.bool.isRequired,
 }
 
