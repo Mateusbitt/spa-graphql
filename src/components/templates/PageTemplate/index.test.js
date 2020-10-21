@@ -1,6 +1,15 @@
 import React from 'react'
 import { shallow } from 'enzyme'
+import { Themes } from 'themes'
 import { PageTemplate } from '.'
+
+const mockDark = Themes.default.dark
+jest.mock('react', () => {
+  return {
+    ...jest.requireActual('react'),
+    useContext: () => mockDark,
+  }
+})
 
 describe('PageTemplate', () => {
   // eslint-disable-next-line react/jsx-props-no-spreading

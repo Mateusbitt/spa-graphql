@@ -33,7 +33,8 @@ describe('PageHeader', () => {
   const wrap = ({ ...props }) => shallow(<PageHeader {...props}>Teste</PageHeader>)
   it('should render PageHeader', () => {
     const wrapper = wrap({
-      toggle: () => {},
+      toggle: () => { },
+      toggleTheme: () => { },
       collapsed: true,
     })
     expect(wrapper.find({
