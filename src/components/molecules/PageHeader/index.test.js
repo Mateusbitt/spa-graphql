@@ -1,5 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
+import { Themes } from 'themes'
 import { PageHeader } from '.'
 
 jest.mock('jwt-decode', () => () => ({
@@ -18,6 +19,14 @@ jest.mock('@apollo/client', () => ({
   }),
   gql: () => 'query',
 }))
+
+const mockDark = Themes.default.dark
+jest.mock('react', () => {
+  return {
+    ...jest.requireActual('react'),
+    useContext: () => mockDark,
+  }
+})
 
 describe('PageHeader', () => {
   // eslint-disable-next-line react/jsx-props-no-spreading
