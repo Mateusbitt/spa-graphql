@@ -18,7 +18,7 @@ const GenericLoggedPage = ({ idPage, children }) => {
     <PageTemplate
       idPage={idPage}
       siderbar={<Siderbar toggleTheme={toggleTheme} collapsed={!!collapsed} />}
-      pageheader={<PageHeader toggle={toggle} collapsed={!!collapsed} toggleTheme={toggleTheme} />}
+      pageheader={<PageHeader toggle={toggle} toggleTheme={toggleTheme} collapsed={!!collapsed} />}
       breadcrumb={null}
     >
       {children}

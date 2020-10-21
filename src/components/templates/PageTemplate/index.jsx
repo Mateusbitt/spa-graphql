@@ -1,12 +1,23 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { Block, Layout, Content } from 'components'
+import { ThemeContext } from 'themes'
 
 const StyledLayout = styled(Layout)`
 height: 100vh;
+
 .site-layout .site-layout-background {
-  background: #fff;
+  background-color: #fff;
+}
+
+#PageHeader {
+  background: ${({ theme }) => theme.colors.background[0]};
+  color: ${({ theme }) => theme.colors.text[0]} !important;
+}
+
+.ant-dropdown-link {
+  color: ${({ theme }) => theme.colors.text[0]} !important;
 }
 `
 
@@ -15,9 +26,10 @@ const PageTemplate = (
     idPage, siderbar, pageheader, breadcrumb, children,
   },
 ) => {
+  const { theme } = useContext(ThemeContext)
   return (
     <Block idPage={idPage}>
-      <StyledLayout>
+      <StyledLayout theme={theme}>
         {siderbar}
         <Layout className="site-layout">
           {pageheader}

@@ -38,7 +38,7 @@ const PageHeader = ({ toggle, collapsed, toggleTheme }) => {
   if (!user) return null
 
   return (
-    <StyledHeader id="PageHeader" className="site-layout-background" theme={theme}>
+    <StyledHeader id="PageHeader" theme={theme} className="site-layout-background">
       {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
         onClick: toggle,
       })}
