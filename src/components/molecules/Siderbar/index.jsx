@@ -24,7 +24,7 @@ const StyledSider = styled(Sider)`
     background-color: ${({ theme }) => theme.colors.background[2]};
   }
   .logo {
-    height: 32px;
+    height: 28px;
     background-color: ${({ theme }) => theme.colors.background[0]};
     margin: 16px;
     margin-left: ${({ collapsed }) => collapsed ? '20px' : '16px'};

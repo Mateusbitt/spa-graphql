@@ -11,6 +11,18 @@ const StyledSwitch = styled(ADSwitch)`
   .ant-switch-inner { color: ${({ theme }) => theme.colors.text[0]} !important };
 `
 
+const MenuStyled = styled(Menu)`
+  box-shadow: -5px 5px;
+  background: rgba(30, 36, 61, 1);
+  .ant-dropdown-link{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+    
+  }
+  #ant-dropdown-logout{
+    border-bottom: none;
+  }
+`
+
 const DropdownUser = ({ toggleTheme }) => {
   const history = useHistory()
   const { theme } = useContext(ThemeContext)
@@ -22,7 +34,7 @@ const DropdownUser = ({ toggleTheme }) => {
   }
 
   return (
-    <Menu>
+    <MenuStyled>
       <MenuItem theme={theme} className="ant-dropdown-link">
         <StyledSwitch
           theme={theme}
@@ -33,8 +45,8 @@ const DropdownUser = ({ toggleTheme }) => {
         />
       </MenuItem>
       <MenuItem theme={theme} className="ant-dropdown-link">Change language</MenuItem>
-      <MenuItem theme={theme} className="ant-dropdown-link" onClick={() => logout()}>Logout</MenuItem>
-    </Menu>
+      <MenuItem theme={theme} id="ant-dropdown-logout" className="ant-dropdown-link" onClick={() => logout()}>Logout</MenuItem>
+    </MenuStyled>
   )
 }
 
