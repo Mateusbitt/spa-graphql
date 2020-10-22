@@ -6,6 +6,23 @@ import { UsersPage } from '.'
 // eslint-disable-next-line react/jsx-props-no-spreading
 const wrap = ({ ...props }) => shallow(<UsersPage {...props} />)
 
+jest.mock('jwt-decode', () => () => ({
+  userData: {
+    id: 'token',
+  },
+}))
+
+jest.mock('@apollo/client', () => ({
+  useQuery: () => ({
+    loading: false,
+    error: false,
+    data: {
+      Users: [{}],
+    },
+  }),
+  gql: () => 'query',
+}))
+
 jest.mock('utils', () => ({ CheckLoggedInn: () => true }))
 
 it('should not render childrens', () => {
