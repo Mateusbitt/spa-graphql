@@ -2,6 +2,8 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import { LoginForm } from '.'
 
+jest.mock('../../../../../public/image/logo/dark/logo_extended.png', () => '')
+
 describe('LoginForm', () => {
   // eslint-disable-next-line react/jsx-props-no-spreading
   const wrap = ({ ...props }) => shallow(<LoginForm {...props} />)
@@ -9,8 +11,8 @@ describe('LoginForm', () => {
     const t = (text) => text
     const wrapper = wrap({
       t,
-      onFinish: () => {},
-      onFinishFailed: () => {},
+      onFinish: () => { },
+      onFinishFailed: () => { },
       children: 'teste',
     })
     expect(wrapper.find({
@@ -22,8 +24,8 @@ describe('LoginForm', () => {
     const t = (text) => text
     const wrapper = wrap({
       t,
-      onFinish: () => {},
-      onFinishFailed: () => {},
+      onFinish: () => { },
+      onFinishFailed: () => { },
     })
     expect(wrapper.find({
       name: 'basic',

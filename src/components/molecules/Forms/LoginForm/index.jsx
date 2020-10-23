@@ -11,7 +11,7 @@ import {
   ADCheckbox,
   Block,
 } from 'components'
-import logoExtended from '../../../../../public/image/logo/dark/logo_extended.png'
+import LogoExtended from '../../../../../public/image/logo/dark/logo_extended.png'
 
 const StyledBlock = styled(Block)`
   border: solid rgba(0,255,255,0.2);
@@ -24,7 +24,7 @@ const StyledBlock = styled(Block)`
   .logo {
     height: 100px;
     width: auto;
-    background-image: url(${logoExtended});
+    background-image: url(${LogoExtended});
     background-size: contain;
     background-repeat:no-repeat;
   }
