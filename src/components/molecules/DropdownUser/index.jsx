@@ -12,6 +12,7 @@ const StyledSwitch = styled(ADSwitch)`
 `
 
 const MenuStyled = styled(Menu)`
+  color: ${({ theme }) => theme.colors.text[0]} !important };
   box-shadow: -5px 5px;
   background: rgba(30, 36, 61, 1);
   .ant-dropdown-link{
@@ -34,7 +35,7 @@ const DropdownUser = ({ toggleTheme }) => {
   }
 
   return (
-    <MenuStyled>
+    <MenuStyled theme={theme}>
       <MenuItem theme={theme} className="ant-dropdown-link">
         <StyledSwitch
           theme={theme}
