@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Switch, Route } from 'react-router-dom'
 import {
-  HomePage, LoginPage, UsersPage, ChatsPage,
+  HomePage, LoginPage, UsersPage, ChatsPage, RegisterPage,
 } from 'components'
 
 const Routes = ({
@@ -21,6 +21,9 @@ const Routes = ({
       </Route>
       <Route path="/chats">
         <ChatsPage idPage="loginPage" t={t} toggleTheme={toggleTheme} i18n={i18n} theme={theme} />
+      </Route>
+      <Route path="/register">
+        <RegisterPage idPage="registerPage" t={t} toggleTheme={toggleTheme} i18n={i18n} theme={theme} />
       </Route>
       <Route path="*">
         <HomePage idPage="homePage" t={t} toggleTheme={toggleTheme} i18n={i18n} theme={theme} />

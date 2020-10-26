@@ -33,6 +33,7 @@ export { GenericLoggedPage } from './pages/GenericLoggedPage'
 export { HomePage } from './pages/HomePage'
 export { LoginPage } from './pages/LoginPage'
 export { UsersPage } from './pages/UsersPage'
+export { RegisterPage } from './pages/RegisterPage'
 
 /** templates */
 export { GenericTemplate } from './templates/GenericTemplate'
