@@ -9,19 +9,54 @@ import {
   ADInputPassword,
   Block,
 } from 'components'
+import LogoExtended from '../../../../public/image/logo/dark/logo_extended.png'
 
 const StyledBlock = styled(Block)`
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;  
+  height: 100vh;
+
+  .logo {
+    height: 100px;
+    width: 300px;
+    background-image: url(${LogoExtended});
+    background-size: contain;
+    background-repeat:no-repeat;
+  }
+
+  #register{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+    color: #FFF;
+  }
+
+  .ant-form.ant-form-horizontal.sc-dlnjPT{
+    width: 650px;
+
+  .ant-form-item-label{
+    width: 150px;
+    text-align: start;
+  }
+
+  .ant-form-item-control-input-content{
+  display: flex;
+  justify-content: center;
+  }
 `
 
 const StyledRegister = styled(Block)`
+
 `
 
 const RegisterPage = ({ onFinish, onFinishFailed }) => {
   return (
     <StyledBlock>
+      <Block className="logo" />
       <StyledRegister>
-        <h1>Register</h1>
+        <h1 id="register">Create your account!</h1>
         <ADForm
           name="basic"
           initialValues={{ remember: true }}
@@ -34,7 +69,7 @@ const RegisterPage = ({ onFinish, onFinishFailed }) => {
             name="name"
             rules={[{ required: true, message: 'Please input your full name!' }]}
           >
-            <ADInput />
+            <ADInput className="teste" />
 
           </ADFormItem>
 
@@ -43,7 +78,7 @@ const RegisterPage = ({ onFinish, onFinishFailed }) => {
             name="email"
             rules={[{ required: true, message: 'Please input your E-mail!' }]}
           >
-            <ADInput />
+            <ADInput className="teste" />
 
           </ADFormItem>
 
@@ -81,7 +116,7 @@ const RegisterPage = ({ onFinish, onFinishFailed }) => {
 
           <ADFormItem>
             <ADButton palette="primary" htmlType="submit">
-              Register
+              Finish Registration
             </ADButton>
           </ADFormItem>
         </ADForm>
