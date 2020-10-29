@@ -16,7 +16,9 @@ const StyledBlock = styled(Block)`
   align-items: center;
   flex-direction: column;  
   height: 100vh;
-  
+  color: #E1E1E7;
+  background: #1e243d;
+
   #register{
     display: flex;
     justify-content: center;
@@ -37,8 +39,8 @@ const StyledBlock = styled(Block)`
   }
 
   .ant-form-item-control-input-content{
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
   }
 `
 const StyledBord = styled(Block)`
@@ -113,7 +115,7 @@ const RegisterPage = ({ onFinish, onFinishFailed }) => {
               name="picture"
               rules={[{ required: true, message: 'Please send your image!' }]}
             >
-              <ADInput placeholder="Set a profile photo" />
+              <ADInput type="file" placeholder="Set a profile photo" />
             </ADFormItem>
 
             <ADFormItem>
