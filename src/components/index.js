@@ -20,6 +20,7 @@ export { PageHeader } from './molecules/PageHeader'
 export { Siderbar } from './molecules/Siderbar'
 export { ADDropdown } from './molecules/antd/Dropdown'
 export { ADTable } from './molecules/antd/Table'
+export { ADModal } from './molecules/antd/Modal'
 export { DropdownUser } from './molecules/DropdownUser'
 
 /** molecules Forms */
