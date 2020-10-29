@@ -9,7 +9,6 @@ import {
   ADInputPassword,
   Block,
 } from 'components'
-import LogoExtended from '../../../../public/image/logo/dark/logo_extended.png'
 
 const StyledBlock = styled(Block)`
   display: flex;
@@ -17,20 +16,16 @@ const StyledBlock = styled(Block)`
   align-items: center;
   flex-direction: column;  
   height: 100vh;
-
-  .logo {
-    height: 100px;
-    width: 300px;
-    background-image: url(${LogoExtended});
-    background-size: contain;
-    background-repeat:no-repeat;
-  }
-
+  
   #register{
     display: flex;
     justify-content: center;
-    padding-bottom: 20px;
     color: #FFF;
+  }
+
+  #msg{
+    text-align: center;
+    padding-bottom: 10px;
   }
 
   .ant-form.ant-form-horizontal.sc-dlnjPT{
@@ -46,6 +41,12 @@ const StyledBlock = styled(Block)`
   justify-content: center;
   }
 `
+const StyledBord = styled(Block)`
+  border: solid rgba(0,255,255,0.2);
+  border-radius: 4px;
+  width: 700px;
+  padding: 30px;
+`
 
 const StyledRegister = styled(Block)`
 
@@ -54,80 +55,82 @@ const StyledRegister = styled(Block)`
 const RegisterPage = ({ onFinish, onFinishFailed }) => {
   return (
     <StyledBlock>
-      <Block className="logo" />
-      <StyledRegister>
-        <h1 id="register">Create your account!</h1>
-        <ADForm
-          name="basic"
-          initialValues={{ remember: true }}
-          onFinish={onFinish}
-          onFinishFailed={onFinishFailed}
-        >
-
-          <ADFormItem
-            label="Name"
-            name="name"
-            rules={[{ required: true, message: 'Please input your full name!' }]}
+      <StyledBord>
+        <StyledRegister>
+          <h1 id="register">Create your account!</h1>
+          <p id="msg">Please fill out the form below to complete the registration.</p>
+          <ADForm
+            name="basic"
+            initialValues={{ remember: true }}
+            onFinish={onFinish}
+            onFinishFailed={onFinishFailed}
           >
-            <ADInput className="teste" />
 
-          </ADFormItem>
+            <ADFormItem
+              label="Name"
+              name="name"
+              rules={[{ required: true, message: 'Please input your full name!' }]}
+            >
+              <ADInput className="teste" placeholder="Your full name" />
 
-          <ADFormItem
-            label="E-mail"
-            name="email"
-            rules={[{ required: true, message: 'Please input your E-mail!' }]}
-          >
-            <ADInput className="teste" />
+            </ADFormItem>
 
-          </ADFormItem>
+            <ADFormItem
+              label="E-mail"
+              name="email"
+              rules={[{ required: true, message: 'Please input your E-mail!' }]}
+            >
+              <ADInput className="teste" placeholder="Your email" />
 
-          <ADFormItem
-            label="Username"
-            name="username"
-            rules={[{ required: true, message: 'Please input your username!' }]}
-          >
-            <ADInput />
-          </ADFormItem>
+            </ADFormItem>
 
-          <ADFormItem
-            label="Password"
-            name="password"
-            rules={[{ required: true, message: 'Please input your password!' }]}
-          >
-            <ADInputPassword />
-          </ADFormItem>
+            <ADFormItem
+              label="Username"
+              name="username"
+              rules={[{ required: true, message: 'Please input your username!' }]}
+            >
+              <ADInput placeholder="Choose your user" />
+            </ADFormItem>
 
-          <ADFormItem
-            label="Confirm Password"
-            name="confirmPassword"
-            rules={[{ required: true, message: 'Please confirm your password!' }]}
-          >
-            <ADInputPassword />
-          </ADFormItem>
+            <ADFormItem
+              label="Password"
+              name="password"
+              rules={[{ required: true, message: 'Please input your password!' }]}
+            >
+              <ADInputPassword placeholder="Choose your password" />
+            </ADFormItem>
 
-          <ADFormItem
-            label="Picture"
-            name="picture"
-            rules={[{ required: true, message: 'Please send your image!' }]}
-          >
-            <ADInput />
-          </ADFormItem>
+            <ADFormItem
+              label="Confirm Password"
+              name="confirmPassword"
+              rules={[{ required: true, message: 'Please confirm your password!' }]}
+            >
+              <ADInputPassword placeholder="Confirm your password" />
+            </ADFormItem>
 
-          <ADFormItem>
-            <ADButton palette="primary" htmlType="submit">
-              Finish Registration
-            </ADButton>
-          </ADFormItem>
-        </ADForm>
-      </StyledRegister>
+            <ADFormItem
+              label="Picture"
+              name="picture"
+              rules={[{ required: true, message: 'Please send your image!' }]}
+            >
+              <ADInput placeholder="Set a profile photo" />
+            </ADFormItem>
+
+            <ADFormItem>
+              <ADButton palette="primary" htmlType="submit">
+                Finish Registration
+              </ADButton>
+            </ADFormItem>
+          </ADForm>
+        </StyledRegister>
+      </StyledBord>
     </StyledBlock>
   )
 }
 
 RegisterPage.propTypes = {
-  onFinish: PropTypes.func.isRequired,
-  onFinishFailed: PropTypes.func.isRequired,
+  onFinish: PropTypes.func,
+  onFinishFailed: PropTypes.func,
 }
 
 export { RegisterPage }
