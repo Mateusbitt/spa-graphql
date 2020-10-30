@@ -1793,6 +1793,14 @@ ansi-styles@^4.1.0:
     "@types/color-name" "^1.1.1"
     color-convert "^2.0.1"
 
+antd-img-crop@^3.13.1:
+  version "3.13.1"
+  resolved "https://registry.yarnpkg.com/antd-img-crop/-/antd-img-crop-3.13.1.tgz#8d188bdcac6b58b756f836f21cf204339cfd0afd"
+  integrity sha512-0j8KaQZ4uMGLhLXqBmoL7vV4lTdSCVNH9BWnx5EUkNS75eUNXvkFcvNMwJC2MkEriFRvvDj4FXqe4tLsyCHaLQ==
+  dependencies:
+    "@babel/runtime" "^7.12.0"
+    react-easy-crop "^3.2.1"
+
 antd@^4.6.6:
   version "4.6.6"
   resolved "https://registry.yarnpkg.com/antd/-/antd-4.6.6.tgz#79b3e22ba6ddefaa2948d00d86d2c6130b3562fb"
@@ -7490,6 +7498,13 @@ react-dom@16.13.1:
     prop-types "^15.6.2"
     scheduler "^0.19.1"
 
+react-easy-crop@^3.2.1:
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/react-easy-crop/-/react-easy-crop-3.2.2.tgz#6e9efc1933351ad9caa563030a59b6eed13d1e64"
+  integrity sha512-clDimDXVvxOAhM/jKx5RO6zrk+ODqXj1FI50Fznm/qYlsZlbhS8z1R4yk9yynTYOpt8524inTczywhGVaCGlRA==
+  dependencies:
+    tslib "2.0.1"
+
 react-i18next@^11.7.3:
   version "11.7.3"
   resolved "https://registry.yarnpkg.com/react-i18next/-/react-i18next-11.7.3.tgz#256461c46baf5b3208c3c6860ca4e569fc7ed053"
@@ -8795,6 +8810,11 @@ tsconfig-paths@^3.9.0:
     json5 "^1.0.1"
     minimist "^1.2.0"
     strip-bom "^3.0.0"
+
+tslib@2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.0.1.tgz#410eb0d113e5b6356490eec749603725b021b43e"
+  integrity sha512-SgIkNheinmEBgx1IUNirK0TUD4X9yjjBRTqqjggWCU3pUEqIk3/Uwl3yRixYKT6WjQuGiwDv4NomL3wqRCj+CQ==
 
 tslib@^1.10.0, tslib@^1.9.0, tslib@^1.9.3:
   version "1.13.0"

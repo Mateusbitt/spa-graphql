@@ -22,6 +22,7 @@ export { ADDropdown } from './molecules/antd/Dropdown'
 export { ADTable } from './molecules/antd/Table'
 export { ADModal } from './molecules/antd/Modal'
 export { DropdownUser } from './molecules/DropdownUser'
+export { ADUploadImage } from './molecules/antd/ImageUpload'
 
 /** molecules Forms */
 export { LoginForm } from './molecules/Forms/LoginForm'
