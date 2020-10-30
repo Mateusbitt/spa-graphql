@@ -35,6 +35,12 @@ const StyledBlock = styled(Block)`
   }
 `
 
+const StyledLabel = styled(Block)`
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+`
+
 const LoginForm = ({ onFinish, onFinishFailed }) => {
   return (
     <>
@@ -62,9 +68,14 @@ const LoginForm = ({ onFinish, onFinishFailed }) => {
             <ADInputPassword />
           </ADFormItem>
 
-          <ADFormItem name="remember" valuePropName="checked">
-            <ADCheckbox>Remember me</ADCheckbox>
-          </ADFormItem>
+          <StyledLabel>
+            <ADFormItem name="remember" valuePropName="checked">
+              <ADCheckbox>Remember me</ADCheckbox>
+            </ADFormItem>
+
+            <Link to="/forgot">Problems to logging?</Link>
+
+          </StyledLabel>
 
           <ADFormItem>
             <ADButton palette="primary" htmlType="submit">

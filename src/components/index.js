@@ -36,6 +36,7 @@ export { HomePage } from './pages/HomePage'
 export { LoginPage } from './pages/LoginPage'
 export { UsersPage } from './pages/UsersPage'
 export { RegisterPage } from './pages/RegisterPage'
+export { ForgotPasswordPage } from './pages/ForgotPasswordPage'
 
 /** templates */
 export { GenericTemplate } from './templates/GenericTemplate'
