@@ -14,6 +14,7 @@ import {
   ADFormItem,
   ADInputPassword,
   Block,
+  ADUploadImage,
 } from 'components'
 
 const UsersPage = () => {
@@ -115,11 +116,11 @@ const UsersPage = () => {
         </ADFormItem>
 
         <ADFormItem
-          label="Picture"
+          label="Your Picture"
           name="picture"
           rules={[{ required: true, message: 'Please send your image!' }]}
         >
-          <ADInput type="file" placeholder="Set a profile photo" />
+          <ADUploadImage />
         </ADFormItem>
       </StyledBlock>
     </>
@@ -140,7 +141,6 @@ const UsersPage = () => {
   }
 
   const handleCancel = () => {
-    // console.log('Cancel button')
     setModalVisible(false)
   }
 
