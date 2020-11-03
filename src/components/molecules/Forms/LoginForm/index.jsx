@@ -1,22 +1,22 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import {
   ADForm,
   ADFormItem,
   ADButton,
-  ADInput,
   ADInputPassword,
   ADCheckbox,
   Block,
+  ADInputIcon,
 } from 'components'
-import LogoExtended from '../../../../../public/image/logo/dark/logo_extended.png'
+import LogoExtended from '../../../../../public/image/logo/dark/logo_site.png'
 
+// background: #405783;
 const StyledBlock = styled(Block)`
   border: solid rgba(0,255,255,0.2);
   border-radius: 4px;
-  height: auto;
+  height: 380px;
   width: 400px;
   padding: 30px;
   margin: 10px;
@@ -24,6 +24,7 @@ const StyledBlock = styled(Block)`
   .logo {
     height: 100px;
     width: auto;
+    margin-bottom: 30px;
     background-image: url(${LogoExtended});
     background-size: contain;
     background-repeat:no-repeat;
@@ -39,6 +40,7 @@ const StyledLabel = styled(Block)`
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  padding-top: 20px;
 `
 
 const LoginForm = ({ onFinish, onFinishFailed }) => {
@@ -52,13 +54,11 @@ const LoginForm = ({ onFinish, onFinishFailed }) => {
           onFinish={onFinish}
           onFinishFailed={onFinishFailed}
         >
-          <ADFormItem
+          <ADInputIcon
             label="Username"
             name="username"
             rules={[{ required: true, message: 'Please input your username!' }]}
-          >
-            <ADInput />
-          </ADFormItem>
+          />
 
           <ADFormItem
             label="Password"
@@ -73,18 +73,16 @@ const LoginForm = ({ onFinish, onFinishFailed }) => {
               <ADCheckbox>Remember me</ADCheckbox>
             </ADFormItem>
 
-            <Link to="/forgot">Problems to logging?</Link>
+            <ADFormItem>
+              <ADButton palette="primary" htmlType="submit">
+                Sign-In
+              </ADButton>
+            </ADFormItem>
 
           </StyledLabel>
 
-          <ADFormItem>
-            <ADButton palette="primary" htmlType="submit">
-              Sign-In
-            </ADButton>
-          </ADFormItem>
         </ADForm>
       </StyledBlock>
-      <Link to="/register">Don&apos;t have an account?</Link>
     </>
 
   )
